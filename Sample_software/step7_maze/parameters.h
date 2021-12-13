@@ -18,13 +18,13 @@
 //センサ関連パラメータ
 #define WAITLOOP_SLED	180				//LEDを光らせてからAD変換を開始するまでの時間稼ぎ用定数
 
-#define REF_SEN_R	1200				//マウスを迷路中央に置いた時のセンサの値
-#define REF_SEN_L	1200				//マウスを迷路中央に置いた時のセンサの値
+#define REF_SEN_R	937				//マウスを迷路中央に置いた時のセンサの値
+#define REF_SEN_L	1318				//マウスを迷路中央に置いた時のセンサの値
 
-#define TH_SEN_R	50				//壁があるか否かの閾値	車体を区画の左へ寄せた時のセンサ値(壁あり)
-#define TH_SEN_L	50				//壁があるか否かの閾値	車体を区画の右へ寄せた時のセンサ値(壁あり)
-#define TH_SEN_FR	50				//壁があるか否かの閾値	
-#define TH_SEN_FL	50				//壁があるか否かの閾値
+#define TH_SEN_R	175				//壁があるか否かの閾値	車体を区画の左へ寄せた時のセンサ値(壁あり)
+#define TH_SEN_L	103				//壁があるか否かの閾値	車体を区画の右へ寄せた時のセンサ値(壁あり)
+#define TH_SEN_FR	170				//壁があるか否かの閾値	
+#define TH_SEN_FL	108				//壁があるか否かの閾値
 
 #define CONTH_SEN_R	TH_SEN_R			//制御をかけるか否かの閾値
 #define CONTH_SEN_L	TH_SEN_L			//制御をかけるか否かの閾値

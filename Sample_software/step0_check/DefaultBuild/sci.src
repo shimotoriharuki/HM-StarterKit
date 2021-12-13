@@ -1,0 +1,534 @@
+;RX Family C/C++ Compiler (V3.03.00 [20 Nov 2020])  13-Dec-2021 21:49:43
+
+;*** CPU TYPE ***
+
+;-ISA=RXV1
+
+;*** COMMAND PARAMETER ***
+
+;-output=src=sci.src
+;-isa=rxv1
+;-fpu
+;-lang=c99
+;-include=.
+;-obj_path=DefaultBuild
+;-asm_path=DefaultBuild
+;-debug
+;-g_line
+;-nologo
+;-MAKEUD=DefaultBuild
+;-exec_time=C:\Users\under\AppData\Local\Temp\CSPlusBuildTool_a69a4b8a21614f2681efbf129b8ab26dhh2oei03.zgw
+;sci.c
+
+		.glb	_init_sci
+		.glb	_SCI_putc
+		.glb	_SCI_printf
+		.SECTION	P,CODE
+_init_sci:
+		.STACK	_init_sci=4
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",12
+		MOV.L #00080014H, R14
+		MOV.W #0A502H, 03EAH[R14]
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",13
+		MOV.L [R14], R15
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",16
+		MOV.L #0008A020H, R1
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",13
+		BCLR #1EH, R15
+		MOV.L R15, [R14]
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",14
+		MOV.W #0A500H, 03EAH[R14]
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",16
+		MOV.B #00H, 02H[R1]
+		MOV.L #000000F0H, R14
+L11:	; bb3
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",17
+		TST 02H[R1].UB, R14
+		BNE L11
+L12:	; bb9
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",18
+		MOV.L #0008C002H, R14
+		BSET #06H, 20H[R14].B
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",20
+		MOV.L #0008C003H, R15
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",19
+		BSET #06H, [R14].B
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",23
+		MOV.L #0008C11FH, R5
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",20
+		BCLR #00H, [R15].B
+		MOV.L #000000FCH, R2
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",21
+		BCLR #06H, 60H[R14].B
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",22
+		BCLR #00H, 60H[R15].B
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",23
+		BCLR #07H, [R5].B
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",24
+		BSET #06H, [R5].B
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",25
+		MOVU.B 37H[R5], R4
+		OR #0AH, R4
+		AND #0EAH, R4
+		MOV.B R4, 37H[R5]
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",26
+		MOVU.B 39H[R5], R4
+		OR #0AH, R4
+		AND #0EAH, R4
+		MOV.B R4, 39H[R5]
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",27
+		BCLR #06H, [R5].B
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",28
+		BSET #07H, [R5].B
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",29
+		BSET #00H, 60H[R15].B
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",30
+		AND 02H[R1].UB, R2
+		MOV.B R2, 02H[R1]
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",31
+		MOV.B #00H, [R1]
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",32
+		MOV.B #0F2H, 06H[R1]
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",33
+		MOV.B #00H, 07H[R1]
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",34
+		MOV.B #26H, 01H[R1]
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",35
+		MOV.B #30H, 02H[R1]
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",36
+		BSET #06H, 60H[R14].B
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",37
+		BSET #05H, 02H[R1].B
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",38
+		BSET #04H, 02H[R1].B
+		RTS
+_SCI_putc:
+		.STACK	_SCI_putc=4
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",41
+		MOV.L #001E8480H, R14
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",53
+		MOV.L #0008A023H, R15
+L14:	; bb
+		BTST #02H, 01H[R15].B
+		BNE L17
+L15:	; if_break_bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",52
+		SUB #01H, R14
+		BNE L14
+L16:	; bb20
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		MOV.L #00000000H, R1
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",59
+		RTS
+L17:	; if_then_bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",54
+		MOV.B R1, [R15]
+		MOV.L #00000001H, R1
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",55
+		RTS
+__$int_to_Dec:
+		.STACK	__$int_to_Dec=8
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",62
+		PUSH.L R6
+		MOV.L #00000000H, R14
+L19:	; bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",70
+		CMP #00H, R1
+		MOV.L #00000030H, R15
+		BEQ L21
+L20:	; if_else_bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",71
+		MOV.L R1, R15
+		DIVU #0AH, R15
+		MUL #0AH, R15
+		SUB R15, R1, R15
+		OR #30H, R15
+L21:	; if_break_bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",72
+		MOV.W R14, R14
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",74
+		DIVU #0AH, R1
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",72
+		MOV.B R15, [R2,R14]
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",69
+		ADD #01H, R14
+		CMP #00H, R1
+		BNE L19
+L22:	; bb28
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",78
+		MOV.W R14, R14
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",79
+		ADD #0FFFFFFFFH, R14, R15
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",78
+		SHLR #01H, R14, R5
+		MOV.L #00000000H, R4
+L23:	; bb63
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",79
+		MOV.W R4, R4
+		MOV.W R5, R3
+		CMP R3, R4
+		BGE L25
+L24:	; bb33
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",81
+		SUB R4, R15, R1
+		MOVU.B [R2,R1], R6
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",80
+		MOVU.B [R4,R2], R3
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",81
+		MOV.B R6, [R4,R2]
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",82
+		MOV.B R3, [R2,R1]
+		ADD #01H, R4
+		BRA L23
+L25:	; bb71
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		MOV.L #00000000H, R15
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",84
+		MOV.B R15, [R2,R14]
+		RTSD #04H, R6-R6
+__$int_to_Hex:
+		.STACK	__$int_to_Hex=8
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",90
+		CMP #00H, R2
+		MOV.L #00000057H, R14
+		PUSH.L R6
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",99
+		STNZ #37H, R14
+		MOV.L #00000000H, R15
+L27:	; bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",104
+		MOV.L R1, R5
+		AND #0FH, R5
+		CMP #0AH, R5
+		MOV.W R15, R15
+		BLT L29
+L28:	; if_then_bb20
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		ADD R14, R5
+		BRA L30
+L29:	; if_else_bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",105
+		MOV.L R1, R5
+		OR #30H, R5
+		AND #3FH, R5
+L30:	; if_break_bb40
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		MOV.B R5, [R3,R15]
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",102
+		ADD #01H, R15
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",107
+		SHLR #04H, R1
+		BNE L27
+L31:	; bb49
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",111
+		MOV.W R15, R14
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",112
+		ADD #0FFFFFFFFH, R14, R15
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",111
+		SHLR #01H, R14, R5
+		MOV.L #00000000H, R4
+L32:	; bb84
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",112
+		MOV.W R4, R4
+		MOV.W R5, R2
+		CMP R2, R4
+		BGE L34
+L33:	; bb54
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",114
+		SUB R4, R15, R1
+		MOVU.B [R3,R1], R6
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",113
+		MOVU.B [R4,R3], R2
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",114
+		MOV.B R6, [R4,R3]
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",115
+		MOV.B R2, [R3,R1]
+		ADD #01H, R4
+		BRA L32
+L34:	; bb92
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		MOV.L #00000000H, R15
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",118
+		MOV.B R15, [R3,R14]
+		RTSD #04H, R6-R6
+__$PrintFormat:
+		.STACK	__$PrintFormat=56
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",121
+		MOVU.B [R1], R14
+		PUSHM R6-R13
+		ADD #0FFFFFFECH, R0
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",137
+		CMP #30H, R14
+		MOV.L #00000000H, R6
+		BNE L37
+L36:	; if_then_bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",139
+		ADD #01H, R1
+		MOV.L #00000001H, R6
+L37:	; if_break_bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",141
+		MOVU.B [R1], R7
+		CMP #30H, R7
+		BLT L39
+L38:	; if_break_bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		CMP #3AH, R7
+		BLT L40
+L39:	; if_break_bb.if_break_bb43_crit_edge
+		MOV.L #00000000H, R7
+		BRA L41
+L40:	; if_then_bb35
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",143
+		ADD #01H, R1
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",142
+		ADD #0FFFFFFD0H, R7
+L41:	; if_break_bb43
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",146
+		MOV.L R1, R8
+		MOVU.B [R8+], R14
+		CMP #58H, R14
+		BEQ L58
+L42:	; if_break_bb43
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		CMP #63H, R14
+		BEQ L59
+L43:	; if_break_bb43
+		CMP #64H, R14
+		BEQ L50
+L44:	; if_break_bb43
+		CMP #6CH, R14
+		BEQ L53
+L45:	; if_break_bb43
+		CMP #78H, R14
+		BEQ L60
+L46:	; if_break_bb43
+		CMP #75H, R14
+		BEQ L56
+L47:	; if_break_bb43
+		CMP #73H, R14
+		BNE L49
+L48:	; if_break_bb43.switch_break_bb_crit_edge
+		MOV.L #00000000H, R9
+		BRA L61
+L49:	; switch_clause_bb106
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",184
+		MOV.B #00H, [R0]
+		BRA L48
+L50:	; switch_clause_bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",148
+		MOV.W R2, R1
+		CMP #00H, R1
+		BPZ L55
+L51:	; if_then_bb54
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",150
+		NEG R1
+		MOV.L R0, R2
+L52:	; if_then_bb54
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		BSR __$int_to_Dec
+		MOV.L #00000001H, R9
+		BRA L61
+L53:	; switch_clause_bb65
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",158
+		CMP #00H, R2
+		BPZ L55
+L54:	; if_then_bb71
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",160
+		NEG R2
+		MOV.L R0, R14
+		MOV.L R2, R1
+		MOV.L R14, R2
+		BRA L52
+L55:	; if_else_bb76
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		MOV.L R0, R14
+		MOV.L R2, R1
+		MOV.L R14, R2
+		BRA L57
+L56:	; switch_clause_bb81
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",168
+		MOVU.W R2, R1
+		MOV.L R0, R2
+L57:	; switch_clause_bb81
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		BSR __$int_to_Dec
+		BRA L48
+L58:	; switch_clause_bb91
+		MOV.L #00000001H, R14
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",174
+		MOV.L R2, R1
+		MOV.L R0, R3
+		MOV.L R14, R2
+		BSR __$int_to_Hex
+		BRA L48
+L59:	; switch_clause_bb97
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",180
+		MOV.B R2, [R0]
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",181
+		MOV.B #00H, 01H[R0]
+		BRA L48
+L60:	; switch_clause_bb87
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		MOV.L #00000000H, R9
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",171
+		MOV.L R2, R1
+		MOV.L R0, R3
+		MOV.L R9, R2
+		BSR __$int_to_Hex
+L61:	; switch_break_bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",189
+		CMP #00H, R9
+		SCNE.L R10
+L62:	; bb121
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",190
+		MOVU.B R10, R10
+		MOV.L R0, R11
+		MOVU.B [R11,R10], R14
+		CMP #00H, R14
+		BEQ L64
+L63:	; bb118
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		ADD #01H, R10
+		BRA L62
+L64:	; bb131
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",191
+		CMP R10, R7
+		BGT L66
+L65:	; bb131.if_break_bb147_crit_edge
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		MOV.L #00000000H, R7
+		BRA L67
+L66:	; if_then_bb139
+		MOVU.W R7, R7
+		SUB R10, R7
+L67:	; if_break_bb147
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",194
+		CMP #00H, R6
+		MOV.L #0000002DH, R6
+		MOV.L #00000020H, R12
+		BEQ L69
+L68:	; if_then_bb153
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",196
+		CMP #00H, R9
+		MOV.L #00000030H, R12
+L69:	; if_then_bb153
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		BEQ L71
+L70:	; if_then_bb159
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",197
+		MOV.L R6, R1
+		BSR _SCI_putc
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",199
+		SUB #01H, R10
+		MOV.L #00000000H, R9
+L71:	; if_break_bb164
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		MOV.L #00000000H, R13
+L72:	; bb170
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",202
+		MOV.W R13, R13
+		MOV.W R7, R14
+		CMP R14, R13
+		BGE L74
+L73:	; bb165
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",203
+		MOV.L R12, R1
+		BSR _SCI_putc
+		ADD #01H, R13
+		BRA L72
+L74:	; bb178
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",205
+		CMP #00H, R9
+		BEQ L76
+L75:	; if_then_bb184
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",206
+		MOV.L R6, R1
+		BSR _SCI_putc
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",207
+		SUB #01H, R10
+L76:	; bb211.preheader
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		MOVU.B R10, R13
+		MOV.L #00000000H, R12
+L77:	; bb211
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",209
+		MOV.W R12, R12
+		CMP R13, R12
+		BGE L80
+L78:	; bb189
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",210
+		MOVU.B [R11,R12], R1
+		BSR _SCI_putc
+		CMP #00H, R1
+		BEQ L80
+L79:	; if_break_bb208
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		ADD #01H, R12
+		BRA L77
+L80:	; bb220
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",215
+		MOV.L R8, R1
+		RTSD #34H, R6-R13
+_SCI_printf:
+		.STACK	_SCI_printf=20
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",218
+		PUSHM R6-R8
+		SUB #04H, R0
+		MOV.L 14H[R0], R6
+		ADD #18H, R0, R1
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",232
+		MOV.L R1, [R0]
+		MOV.L #00000025H, R7
+		MOV.L R6, R8
+L82:	; bb29
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",234
+		MOVU.B [R8], R1
+		CMP #25H, R1
+		BNE L88
+L83:	; bb36
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",245
+		MOVU.B 01H[R8], R2
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",244
+		ADD #01H, R8, R1
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",245
+		CMP #25H, R2
+		BNE L85
+L84:	; if_then_bb45
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		MOV.L R7, R1
+		BSR _SCI_putc
+		ADD #02H, R8
+		BRA L82
+L85:	; if_else_bb49
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",247
+		MOV.L [R0], R8
+		ADD #04H, R8, R2
+		MOV.L R2, [R0]
+		MOV.L [R8], R2
+		BSR __$PrintFormat
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",248
+		CMP #00H, R1
+		MOV.L R1, R8
+		BNE L82
+L86:	; bb69
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",0
+		MOV.L #00000000H, R1
+L87:	; bb69
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",252
+		RTSD #10H, R6-R8
+L88:	; bb6
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",235
+		CMP #00H, R1
+		BEQ L90
+L89:	; if_else_bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",240
+		BSR _SCI_putc
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",241
+		ADD #01H, R8
+		BRA L82
+L90:	; if_then_bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step0_check\sci.c",237
+		SUB R6, R8
+		MOV.W R8, R1
+		BRA L87
+		.END

@@ -1,0 +1,52 @@
+;RX Family C/C++ Compiler (V3.03.00 [20 Nov 2020])  13-Dec-2021 21:40:23
+
+;*** CPU TYPE ***
+
+;-ISA=RXV1
+
+;*** COMMAND PARAMETER ***
+
+;-output=src=sbrk.src
+;-isa=rxv1
+;-fpu
+;-lang=c99
+;-include=.
+;-obj_path=DefaultBuild
+;-asm_path=DefaultBuild
+;-debug
+;-g_line
+;-nologo
+;-MAKEUD=DefaultBuild
+;-exec_time=C:\Users\under\AppData\Local\Temp\CSPlusBuildTool_7b3837a3649e4df38aab47399f3d711eka2peydp.u3d
+;sbrk.c
+
+		.glb	_sbrk
+		.SECTION	P,CODE
+_sbrk:
+		.STACK	_sbrk=4
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step1_buzzer\sbrk.c",45
+		MOV.L #__$brk, R14
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step1_buzzer\sbrk.c",49
+		MOV.L [R14], R15
+		MOV.L #__$heap_area, R5
+		ADD R15, R1
+		ADD #0400H, R5
+		CMP R5, R1
+		BLEU L12
+L11:	; if_break_bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step1_buzzer\sbrk.c",0
+		MOV.L #0FFFFFFFFH, R1
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step1_buzzer\sbrk.c",57
+		RTS
+L12:	; if_else_bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step1_buzzer\sbrk.c",54
+		MOV.L R1, [R14]
+		MOV.L R15, R1
+		RTS
+		.SECTION	D,ROMDATA,ALIGN=4
+__$brk:
+		.lword	__$heap_area
+		.SECTION	B,DATA,ALIGN=4
+__$heap_area:
+		.blkl	256
+		.END
