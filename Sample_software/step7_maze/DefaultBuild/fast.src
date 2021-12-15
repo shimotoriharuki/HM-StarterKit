@@ -1,4 +1,4 @@
-;RX Family C/C++ Compiler (V3.03.00 [20 Nov 2020])  13-Dec-2021 23:10:34
+;RX Family C/C++ Compiler (V3.03.00 [20 Nov 2020])  15-Dec-2021 22:41:50
 
 ;*** CPU TYPE ***
 
@@ -18,7 +18,7 @@
 ;-optimize=0
 ;-nologo
 ;-MAKEUD=DefaultBuild
-;-exec_time=C:\Users\under\AppData\Local\Temp\CSPlusBuildTool_7d063f35ec3d4a34b7a858c1404f9a0f14w232qg.2ok
+;-exec_time=C:\Users\under\AppData\Local\Temp\CSPlusBuildTool_6585f04cb7f344e9bb5badb9f7a9ab7cuejkffqv.y2r
 ;fast.c
 
 		.glb	_mypos
@@ -64,7 +64,7 @@ L16:	; switch_clause_bb9
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",0
 		MOV.L #00000000H, R4
 		MOV.L #40490FDBH, R3
-		MOV.L #40C90FDBH, R2
+		MOV.L #4196CBE4H, R2
 		MOV.L #0000005AH, R1
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",28
 		BSR _turn
@@ -76,7 +76,7 @@ L18:	; switch_clause_bb10
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",0
 		MOV.L #00000001H, R4
 		MOV.L #40490FDBH, R3
-		MOV.L #40C90FDBH, R2
+		MOV.L #4196CBE4H, R2
 		MOV.L #0000005AH, R1
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",33
 		BSR _turn
@@ -88,7 +88,7 @@ L20:	; switch_clause_bb11
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",0
 		MOV.L #00000001H, R4
 		MOV.L #40490FDBH, R3
-		MOV.L #40C90FDBH, R2
+		MOV.L #4196CBE4H, R2
 		MOV.L #000000B4H, R1
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",38
 		BSR _turn
@@ -174,14 +174,14 @@ L36:	; switch_clause_bb33
 		MUL #5AH, R1
 		ITOF R1, R1
 		MOV.L #00000000H, R4
-		MOV.L #3F800000H, R3
-		MOV.L #40000000H, R2
+		MOV.L #3E4CCCCDH, R3
+		MOV.L #3F800000H, R2
 		BSR _straight
 L37:	; switch_clause_bb33.split
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",0
 		MOV.L #00000000H, R4
 		MOV.L #40490FDBH, R3
-		MOV.L #40C90FDBH, R2
+		MOV.L #4196CBE4H, R2
 		MOV.L #0000005AH, R1
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",80
 		BSR _turn
@@ -195,14 +195,14 @@ L39:	; switch_clause_bb37
 		MUL #5AH, R1
 		ITOF R1, R1
 		MOV.L #00000000H, R4
-		MOV.L #3F800000H, R3
-		MOV.L #40000000H, R2
+		MOV.L #3E4CCCCDH, R3
+		MOV.L #3F800000H, R2
 		BSR _straight
 L40:	; switch_clause_bb37.split
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",0
 		MOV.L #00000001H, R4
 		MOV.L #40490FDBH, R3
-		MOV.L #40C90FDBH, R2
+		MOV.L #4196CBE4H, R2
 		MOV.L #0000005AH, R1
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",86
 		BSR _turn
@@ -216,14 +216,14 @@ L42:	; switch_clause_bb41
 		MUL #5AH, R1
 		ITOF R1, R1
 		MOV.L #00000000H, R4
-		MOV.L #3F800000H, R3
-		MOV.L #40000000H, R2
+		MOV.L #3E4CCCCDH, R3
+		MOV.L #3F800000H, R2
 		BSR _straight
 L43:	; switch_clause_bb41.split
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",0
 		MOV.L #00000001H, R4
 		MOV.L #40490FDBH, R3
-		MOV.L #40C90FDBH, R2
+		MOV.L #4196CBE4H, R2
 		MOV.L #000000B4H, R1
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",92
 		BSR _turn
@@ -304,8 +304,8 @@ L59:	; bb79
 		MUL #5AH, R1
 		ITOF R1, R1
 		MOV.L #00000000H, R4
-		MOV.L #3F800000H, R3
-		MOV.L #40000000H, R2
+		MOV.L #3E4CCCCDH, R3
+		MOV.L #3F800000H, R2
 		BSR _straight
 		RTSD #14H
 		.END

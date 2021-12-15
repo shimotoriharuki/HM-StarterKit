@@ -1,4 +1,4 @@
-;RX Family C/C++ Compiler (V3.03.00 [20 Nov 2020])  13-Dec-2021 23:10:33
+;RX Family C/C++ Compiler (V3.03.00 [20 Nov 2020])  15-Dec-2021 22:41:49
 
 ;*** CPU TYPE ***
 
@@ -18,7 +18,7 @@
 ;-optimize=0
 ;-nologo
 ;-MAKEUD=DefaultBuild
-;-exec_time=C:\Users\under\AppData\Local\Temp\CSPlusBuildTool_7d063f35ec3d4a34b7a858c1404f9a0f14w232qg.2ok
+;-exec_time=C:\Users\under\AppData\Local\Temp\CSPlusBuildTool_6585f04cb7f344e9bb5badb9f7a9ab7cuejkffqv.y2r
 ;init.c
 
 		.glb	_sen_r
@@ -536,7 +536,7 @@ L108:	; entry.split6
 L109:	; entry.split7
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\init.c",229
 		MOV.L #_con_wall, R14
-		MOV.L #3A83126FH, 28H[R14]
+		MOV.L #3A03126FH, 28H[R14]
 		RTS
 _init_maze:
 		.STACK	_init_maze=12

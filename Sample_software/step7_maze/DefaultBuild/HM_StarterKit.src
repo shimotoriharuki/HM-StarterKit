@@ -1,4 +1,4 @@
-;RX Family C/C++ Compiler (V3.03.00 [20 Nov 2020])  13-Dec-2021 23:10:33
+;RX Family C/C++ Compiler (V3.03.00 [20 Nov 2020])  15-Dec-2021 22:41:49
 
 ;*** CPU TYPE ***
 
@@ -18,7 +18,7 @@
 ;-optimize=0
 ;-nologo
 ;-MAKEUD=DefaultBuild
-;-exec_time=C:\Users\under\AppData\Local\Temp\CSPlusBuildTool_7d063f35ec3d4a34b7a858c1404f9a0f14w232qg.2ok
+;-exec_time=C:\Users\under\AppData\Local\Temp\CSPlusBuildTool_6585f04cb7f344e9bb5badb9f7a9ab7cuejkffqv.y2r
 ;HM_StarterKit.c
 
 		.glb	_sen_r
@@ -140,7 +140,7 @@ L29:	; if_then_bb.split15
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\HM_StarterKit.c",0
 		MOV.L #00000000H, R4
 		MOV.L #40490FDBH, R3
-		MOV.L #40C90FDBH, R2
+		MOV.L #4196CBE4H, R2
 		MOV.L #000000B4H, R1
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\HM_StarterKit.c",90
 		BSR _turn
@@ -186,7 +186,7 @@ L38:	; if_then_bb.split24
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\HM_StarterKit.c",0
 		MOV.L #00000000H, R4
 		MOV.L #40490FDBH, R3
-		MOV.L #40C90FDBH, R2
+		MOV.L #4196CBE4H, R2
 		MOV.L #000000B4H, R1
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\HM_StarterKit.c",99
 		BSR _turn
@@ -265,7 +265,7 @@ L55:	; if_then_bb36.split38
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\HM_StarterKit.c",0
 		MOV.L #00000000H, R4
 		MOV.L #40490FDBH, R3
-		MOV.L #40C90FDBH, R2
+		MOV.L #4196CBE4H, R2
 		MOV.L #000000B4H, R1
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\HM_StarterKit.c",130
 		BSR _turn
@@ -311,7 +311,7 @@ L64:	; if_then_bb36.split47
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\HM_StarterKit.c",0
 		MOV.L #00000000H, R4
 		MOV.L #40490FDBH, R3
-		MOV.L #40C90FDBH, R2
+		MOV.L #4196CBE4H, R2
 		MOV.L #000000B4H, R1
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\HM_StarterKit.c",139
 		BSR _turn
