@@ -25,6 +25,7 @@ void fast_run(int x, int y)
 			break;
 		
 		case right:					//右に向く
+			
 			turn(90,TURN_ACCEL,TURN_SPEED,RIGHT);				//右に曲がって
 			straight_count = 1;
 			break;
@@ -77,18 +78,30 @@ void fast_run(int x, int y)
 			
 			case right:
 				straight(SECTION*straight_count,FAST_ACCEL,FAST_SPEED,0.0);
+				if(mypos.dir == north && (wall[mypos.x][mypos.y].north & MASK_SEARCH) == WALL || mypos.dir == east && (wall[mypos.x][mypos.y].east & MASK_SEARCH) == WALL || mypos.dir == west && (wall[mypos.x][mypos.y].west & MASK_SEARCH) == WALL || mypos.dir == south && (wall[mypos.x][mypos.y].south & MASK_SEARCH) == WALL){ //前に壁があったら
+					adj_position();
+					BEEP();
+				}
 				turn(90,TURN_ACCEL,TURN_SPEED,RIGHT);				//右に曲がって
 				straight_count = 1;			//走る直線の距離をリセット
 				break;
 			
 			case left:
 				straight(SECTION*straight_count,FAST_ACCEL,FAST_SPEED,0.0);
+				if(mypos.dir == north && (wall[mypos.x][mypos.y].north & MASK_SEARCH) == WALL || mypos.dir == east && (wall[mypos.x][mypos.y].east & MASK_SEARCH) == WALL || mypos.dir == west && (wall[mypos.x][mypos.y].west & MASK_SEARCH) == WALL || mypos.dir == south && (wall[mypos.x][mypos.y].south & MASK_SEARCH) == WALL){ //前に壁があったら
+					adj_position();
+					BEEP();
+				}
 				turn(90,TURN_ACCEL,TURN_SPEED,LEFT);				//左に曲がって
 				straight_count = 1;			//走る直線の距離をリセット
 				break;
 			
 			case rear:
 				straight(SECTION*straight_count,FAST_ACCEL,FAST_SPEED,0.0);
+				if(mypos.dir == north && (wall[mypos.x][mypos.y].north & MASK_SEARCH) == WALL || mypos.dir == east && (wall[mypos.x][mypos.y].east & MASK_SEARCH) == WALL || mypos.dir == west && (wall[mypos.x][mypos.y].west & MASK_SEARCH) == WALL || mypos.dir == south && (wall[mypos.x][mypos.y].south & MASK_SEARCH) == WALL){ //前に壁があったら
+					adj_position();
+					BEEP();
+				}
 				turn(180,TURN_ACCEL,TURN_SPEED,LEFT);				//左に曲がって
 				straight_count = 1;			//走る直線の距離をリセット
 				break;

@@ -1,4 +1,4 @@
-;RX Family C/C++ Compiler (V3.03.00 [20 Nov 2020])  16-Dec-2021 23:32:07
+;RX Family C/C++ Compiler (V3.03.00 [20 Nov 2020])  16-Dec-2021 23:40:44
 
 ;*** CPU TYPE ***
 
@@ -18,7 +18,7 @@
 ;-optimize=0
 ;-nologo
 ;-MAKEUD=DefaultBuild
-;-exec_time=C:\Users\under\AppData\Local\Temp\CSPlusBuildTool_204e991065024baca64b23cbff93c536oraqaydk.ivm
+;-exec_time=C:\Users\under\AppData\Local\Temp\CSPlusBuildTool_b17a2bed89a9418697a6831d029d9090c5lwxsmx.o05
 ;search.c
 
 		.glb	_sen_r
@@ -1265,7 +1265,7 @@ L212:	; entry.split
 		MOV.L #00000006H, [R14]
 L213:	; entry.split1
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\search.c",0
-		MOV.L #000003E8H, R1
+		MOV.L #00000258H, R1
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\search.c",387
 		BSR _wait_ms
 		RTS

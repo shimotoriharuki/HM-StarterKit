@@ -1,4 +1,4 @@
-;RX Family C/C++ Compiler (V3.03.00 [20 Nov 2020])  16-Dec-2021 23:18:59
+;RX Family C/C++ Compiler (V3.03.00 [20 Nov 2020])  16-Dec-2021 23:47:57
 
 ;*** CPU TYPE ***
 
@@ -18,14 +18,17 @@
 ;-optimize=0
 ;-nologo
 ;-MAKEUD=DefaultBuild
-;-exec_time=C:\Users\under\AppData\Local\Temp\CSPlusBuildTool_e8ed5d860eb94e1ba5dd8261ad1388e2sjmy41py.34x
+;-exec_time=C:\Users\under\AppData\Local\Temp\CSPlusBuildTool_58bd8ae6fa0a4e6d8754e552eec5a6d0x0rffyif.b4s
 ;fast.c
 
 		.glb	_mypos
+		.glb	_wall
 		.glb	_fast_run
 		.glb	_get_nextdir
 		.glb	_turn
 		.glb	_straight
+		.glb	_adj_position
+		.glb	_BEEP
 		.SECTION	P,CODE
 _fast_run:
 		.STACK	_fast_run=24
@@ -66,10 +69,10 @@ L16:	; switch_clause_bb9
 		MOV.L #40490FDBH, R3
 		MOV.L #4196CBE4H, R2
 		MOV.L #0000005AH, R1
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",28
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",29
 		BSR _turn
 L17:	; switch_clause_bb9.split
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",29
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",30
 		MOV.L #00000001H, 04H[R0]
 		BRA L22
 L18:	; switch_clause_bb10
@@ -78,10 +81,10 @@ L18:	; switch_clause_bb10
 		MOV.L #40490FDBH, R3
 		MOV.L #4196CBE4H, R2
 		MOV.L #0000005AH, R1
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",33
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",34
 		BSR _turn
 L19:	; switch_clause_bb10.split
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",34
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",35
 		MOV.L #00000001H, 04H[R0]
 		BRA L22
 L20:	; switch_clause_bb11
@@ -90,17 +93,17 @@ L20:	; switch_clause_bb11
 		MOV.L #40490FDBH, R3
 		MOV.L #4196CBE4H, R2
 		MOV.L #000000B4H, R1
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",38
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",39
 		BSR _turn
 L21:	; switch_clause_bb11.split
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",39
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",40
 		MOV.L #00000001H, 04H[R0]
 L22:	; switch_break_bb
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",43
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",44
 		MOV.L #_mypos, R14
 		MOV.L 08H[R0], 04H[R14]
 L23:	; switch_break_bb.split
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",47
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",48
 		MOV.L #_mypos, R1
 		MOV.L 04H[R1], R1
 		CMP #03H, R1
@@ -114,197 +117,611 @@ L25:	; switch_break_bb.split
 		BEQ L29
 L26:	; switch_break_bb.split
 		CMP #00H, R1
-		BNE L54
+		BNE L147
 L27:	; switch_clause_bb14
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",50
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",51
 		MOV.L #_mypos, R1
 		MOV.W 02H[R1], R2
 		ADD #01H, R2
 		MOV.W R2, 02H[R1]
-		BRA L54
+		BRA L147
 L28:	; switch_clause_bb17
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",54
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",55
 		MOV.L #_mypos, R14
 		MOV.W [R14], R15
 		ADD #01H, R15
 		MOV.W R15, [R14]
-		BRA L54
+		BRA L147
 L29:	; switch_clause_bb20
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",58
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",59
 		MOV.L #_mypos, R1
 		MOV.W 02H[R1], R2
 		SUB #01H, R2
 		MOV.W R2, 02H[R1]
-		BRA L54
+		BRA L147
 L30:	; switch_clause_bb23
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",62
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",63
 		MOV.L #_mypos, R14
 		MOV.W [R14], R15
 		SUB #01H, R15
 		MOV.W R15, [R14]
-		BRA L54
+		BRA L147
 L31:	; bb
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",72
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",73
 		MOV.L 0CH[R0], R2
 		MOV.L 10H[R0], R1
 		ADD #08H, R0, R4
 		MOV.L #00000003H, R3
 		BSR _get_nextdir
 		CMP #03H, R1
-		BEQ L39
+		BEQ L70
 L32:	; bb
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",0
 		CMP #01H, R1
 		BEQ L36
 L33:	; bb
 		CMP #02H, R1
-		BEQ L42
+		BEQ L104
 L34:	; bb
 		CMP #00H, R1
-		BNE L45
+		BNE L138
 L35:	; switch_clause_bb30
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",75
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",76
 		MOV.L 04H[R0], R1
 		ADD #01H, R1
 		MOV.L R1, 04H[R0]
-		BRA L45
+		BRA L138
 L36:	; switch_clause_bb33
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",79
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",80
 		MOV.L 04H[R0], R1
 		MUL #5AH, R1
 		ITOF R1, R1
 		MOV.L #00000000H, R4
-		MOV.L #3E4CCCCDH, R3
+		MOV.L #3ECCCCCDH, R3
 		MOV.L #3F800000H, R2
 		BSR _straight
 L37:	; switch_clause_bb33.split
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",81
+		MOV.L #_mypos, R1
+		MOV.L 04H[R1], R1
+		CMP #00H, R1
+		BNE L40
+L38:	; bb40
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",0
+		MOV.L #_mypos, R1
+		MOV.W [R1], R14
+		SHLL #05H, R14
+		MOV.L #_wall, R15
+		ADD R14, R15
+		MOV.W 02H[R1], R1
+		MOVU.B [R15,R1], R14
+		AND #01H, R14
+		CMP #01H, R14
+		BNE L40
+L39:	; bb57
+		MOV.L #00000001H, [R0]
+		BRA L41
+L40:	; bb58
+		MOV.L #00000000H, [R0]
+L41:	; bb59
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BNE L47
+L42:	; bb62
+		MOV.L #_mypos, R1
+		MOV.L 04H[R1], R1
+		CMP #01H, R1
+		BNE L45
+L43:	; bb66
+		MOV.L #_mypos, R1
+		MOV.W [R1], R14
+		SHLL #05H, R14
+		MOV.L #_wall, R15
+		ADD R14, R15
+		MOV.W 02H[R1], R1
+		MOVU.B [R15,R1], R14
+		SHLR #02H, R14
+		AND #01H, R14
+		CMP #01H, R14
+		BNE L45
+L44:	; bb83
+		MOV.L #00000001H, [R0]
+		BRA L46
+L45:	; bb84
+		MOV.L #00000000H, [R0]
+L46:	; bb85
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BEQ L48
+L47:	; bb89
+		MOV.L #00000001H, [R0]
+		BRA L49
+L48:	; bb90
+		MOV.L #00000000H, [R0]
+L49:	; bb91
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BNE L55
+L50:	; bb95
+		MOV.L #_mypos, R1
+		MOV.L 04H[R1], R1
+		CMP #03H, R1
+		BNE L53
+L51:	; bb99
+		MOV.L #_mypos, R1
+		MOV.W [R1], R14
+		SHLL #05H, R14
+		MOV.L #_wall, R15
+		ADD R14, R15
+		MOV.W 02H[R1], R1
+		MOVU.B [R15,R1], R14
+		SHLR #06H, R14
+		AND #01H, R14
+		CMP #01H, R14
+		BNE L53
+L52:	; bb115
+		MOV.L #00000001H, [R0]
+		BRA L54
+L53:	; bb116
+		MOV.L #00000000H, [R0]
+L54:	; bb117
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BEQ L56
+L55:	; bb121
+		MOV.L #00000001H, [R0]
+		BRA L57
+L56:	; bb122
+		MOV.L #00000000H, [R0]
+L57:	; bb123
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BNE L63
+L58:	; bb127
+		MOV.L #_mypos, R1
+		MOV.L 04H[R1], R1
+		CMP #02H, R1
+		BNE L61
+L59:	; bb131
+		MOV.L #_mypos, R1
+		MOV.W [R1], R14
+		SHLL #05H, R14
+		MOV.L #_wall, R15
+		ADD R14, R15
+		MOV.W 02H[R1], R1
+		MOVU.B [R15,R1], R14
+		SHLR #04H, R14
+		AND #01H, R14
+		CMP #01H, R14
+		BNE L61
+L60:	; bb148
+		MOV.L #00000001H, [R0]
+		BRA L62
+L61:	; bb149
+		MOV.L #00000000H, [R0]
+L62:	; bb150
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BEQ L64
+L63:	; bb154
+		MOV.L #00000001H, [R0]
+		BRA L65
+L64:	; bb155
+		MOV.L #00000000H, [R0]
+L65:	; bb156
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BEQ L68
+L66:	; if_then_bb
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",82
+		BSR _adj_position
+L67:	; if_then_bb.split
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",83
+		BSR _BEEP
+L68:	; if_break_bb
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",0
 		MOV.L #00000000H, R4
 		MOV.L #40490FDBH, R3
 		MOV.L #4196CBE4H, R2
 		MOV.L #0000005AH, R1
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",80
-		BSR _turn
-L38:	; switch_clause_bb33.split1
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",81
-		MOV.L #00000001H, 04H[R0]
-		BRA L45
-L39:	; switch_clause_bb37
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",85
+		BSR _turn
+L69:	; if_break_bb.split
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",86
+		MOV.L #00000001H, 04H[R0]
+		BRA L138
+L70:	; switch_clause_bb162
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",90
 		MOV.L 04H[R0], R1
 		MUL #5AH, R1
 		ITOF R1, R1
 		MOV.L #00000000H, R4
-		MOV.L #3E4CCCCDH, R3
+		MOV.L #3ECCCCCDH, R3
 		MOV.L #3F800000H, R2
 		BSR _straight
-L40:	; switch_clause_bb37.split
+L71:	; switch_clause_bb162.split
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",91
+		MOV.L #_mypos, R1
+		MOV.L 04H[R1], R1
+		CMP #00H, R1
+		BNE L74
+L72:	; bb169
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",0
+		MOV.L #_mypos, R1
+		MOV.W [R1], R14
+		SHLL #05H, R14
+		MOV.L #_wall, R15
+		ADD R14, R15
+		MOV.W 02H[R1], R1
+		MOVU.B [R15,R1], R14
+		AND #01H, R14
+		CMP #01H, R14
+		BNE L74
+L73:	; bb186
+		MOV.L #00000001H, [R0]
+		BRA L75
+L74:	; bb187
+		MOV.L #00000000H, [R0]
+L75:	; bb188
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BNE L81
+L76:	; bb192
+		MOV.L #_mypos, R1
+		MOV.L 04H[R1], R1
+		CMP #01H, R1
+		BNE L79
+L77:	; bb196
+		MOV.L #_mypos, R1
+		MOV.W [R1], R14
+		SHLL #05H, R14
+		MOV.L #_wall, R15
+		ADD R14, R15
+		MOV.W 02H[R1], R1
+		MOVU.B [R15,R1], R14
+		SHLR #02H, R14
+		AND #01H, R14
+		CMP #01H, R14
+		BNE L79
+L78:	; bb213
+		MOV.L #00000001H, [R0]
+		BRA L80
+L79:	; bb214
+		MOV.L #00000000H, [R0]
+L80:	; bb215
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BEQ L82
+L81:	; bb219
+		MOV.L #00000001H, [R0]
+		BRA L83
+L82:	; bb220
+		MOV.L #00000000H, [R0]
+L83:	; bb221
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BNE L89
+L84:	; bb225
+		MOV.L #_mypos, R1
+		MOV.L 04H[R1], R1
+		CMP #03H, R1
+		BNE L87
+L85:	; bb229
+		MOV.L #_mypos, R1
+		MOV.W [R1], R14
+		SHLL #05H, R14
+		MOV.L #_wall, R15
+		ADD R14, R15
+		MOV.W 02H[R1], R1
+		MOVU.B [R15,R1], R14
+		SHLR #06H, R14
+		AND #01H, R14
+		CMP #01H, R14
+		BNE L87
+L86:	; bb245
+		MOV.L #00000001H, [R0]
+		BRA L88
+L87:	; bb246
+		MOV.L #00000000H, [R0]
+L88:	; bb247
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BEQ L90
+L89:	; bb251
+		MOV.L #00000001H, [R0]
+		BRA L91
+L90:	; bb252
+		MOV.L #00000000H, [R0]
+L91:	; bb253
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BNE L97
+L92:	; bb257
+		MOV.L #_mypos, R1
+		MOV.L 04H[R1], R1
+		CMP #02H, R1
+		BNE L95
+L93:	; bb261
+		MOV.L #_mypos, R1
+		MOV.W [R1], R14
+		SHLL #05H, R14
+		MOV.L #_wall, R15
+		ADD R14, R15
+		MOV.W 02H[R1], R1
+		MOVU.B [R15,R1], R14
+		SHLR #04H, R14
+		AND #01H, R14
+		CMP #01H, R14
+		BNE L95
+L94:	; bb278
+		MOV.L #00000001H, [R0]
+		BRA L96
+L95:	; bb279
+		MOV.L #00000000H, [R0]
+L96:	; bb280
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BEQ L98
+L97:	; bb284
+		MOV.L #00000001H, [R0]
+		BRA L99
+L98:	; bb285
+		MOV.L #00000000H, [R0]
+L99:	; bb286
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BEQ L102
+L100:	; if_then_bb291
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",92
+		BSR _adj_position
+L101:	; if_then_bb291.split
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",93
+		BSR _BEEP
+L102:	; if_break_bb293
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",0
 		MOV.L #00000001H, R4
 		MOV.L #40490FDBH, R3
 		MOV.L #4196CBE4H, R2
 		MOV.L #0000005AH, R1
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",86
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",95
 		BSR _turn
-L41:	; switch_clause_bb37.split2
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",87
+L103:	; if_break_bb293.split
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",96
 		MOV.L #00000001H, 04H[R0]
-		BRA L45
-L42:	; switch_clause_bb41
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",91
+		BRA L138
+L104:	; switch_clause_bb294
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",100
 		MOV.L 04H[R0], R1
 		MUL #5AH, R1
 		ITOF R1, R1
 		MOV.L #00000000H, R4
-		MOV.L #3E4CCCCDH, R3
+		MOV.L #3ECCCCCDH, R3
 		MOV.L #3F800000H, R2
 		BSR _straight
-L43:	; switch_clause_bb41.split
+L105:	; switch_clause_bb294.split
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",101
+		MOV.L #_mypos, R1
+		MOV.L 04H[R1], R1
+		CMP #00H, R1
+		BNE L108
+L106:	; bb301
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",0
+		MOV.L #_mypos, R1
+		MOV.W [R1], R14
+		SHLL #05H, R14
+		MOV.L #_wall, R15
+		ADD R14, R15
+		MOV.W 02H[R1], R1
+		MOVU.B [R15,R1], R14
+		AND #01H, R14
+		CMP #01H, R14
+		BNE L108
+L107:	; bb318
+		MOV.L #00000001H, [R0]
+		BRA L109
+L108:	; bb319
+		MOV.L #00000000H, [R0]
+L109:	; bb320
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BNE L115
+L110:	; bb324
+		MOV.L #_mypos, R1
+		MOV.L 04H[R1], R1
+		CMP #01H, R1
+		BNE L113
+L111:	; bb328
+		MOV.L #_mypos, R1
+		MOV.W [R1], R14
+		SHLL #05H, R14
+		MOV.L #_wall, R15
+		ADD R14, R15
+		MOV.W 02H[R1], R1
+		MOVU.B [R15,R1], R14
+		SHLR #02H, R14
+		AND #01H, R14
+		CMP #01H, R14
+		BNE L113
+L112:	; bb345
+		MOV.L #00000001H, [R0]
+		BRA L114
+L113:	; bb346
+		MOV.L #00000000H, [R0]
+L114:	; bb347
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BEQ L116
+L115:	; bb351
+		MOV.L #00000001H, [R0]
+		BRA L117
+L116:	; bb352
+		MOV.L #00000000H, [R0]
+L117:	; bb353
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BNE L123
+L118:	; bb357
+		MOV.L #_mypos, R1
+		MOV.L 04H[R1], R1
+		CMP #03H, R1
+		BNE L121
+L119:	; bb361
+		MOV.L #_mypos, R1
+		MOV.W [R1], R14
+		SHLL #05H, R14
+		MOV.L #_wall, R15
+		ADD R14, R15
+		MOV.W 02H[R1], R1
+		MOVU.B [R15,R1], R14
+		SHLR #06H, R14
+		AND #01H, R14
+		CMP #01H, R14
+		BNE L121
+L120:	; bb377
+		MOV.L #00000001H, [R0]
+		BRA L122
+L121:	; bb378
+		MOV.L #00000000H, [R0]
+L122:	; bb379
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BEQ L124
+L123:	; bb383
+		MOV.L #00000001H, [R0]
+		BRA L125
+L124:	; bb384
+		MOV.L #00000000H, [R0]
+L125:	; bb385
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BNE L131
+L126:	; bb389
+		MOV.L #_mypos, R1
+		MOV.L 04H[R1], R1
+		CMP #02H, R1
+		BNE L129
+L127:	; bb393
+		MOV.L #_mypos, R1
+		MOV.W [R1], R14
+		SHLL #05H, R14
+		MOV.L #_wall, R15
+		ADD R14, R15
+		MOV.W 02H[R1], R1
+		MOVU.B [R15,R1], R14
+		SHLR #04H, R14
+		AND #01H, R14
+		CMP #01H, R14
+		BNE L129
+L128:	; bb410
+		MOV.L #00000001H, [R0]
+		BRA L130
+L129:	; bb411
+		MOV.L #00000000H, [R0]
+L130:	; bb412
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BEQ L132
+L131:	; bb416
+		MOV.L #00000001H, [R0]
+		BRA L133
+L132:	; bb417
+		MOV.L #00000000H, [R0]
+L133:	; bb418
+		MOV.L [R0], R1
+		CMP #00H, R1
+		BEQ L136
+L134:	; if_then_bb423
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",102
+		BSR _adj_position
+L135:	; if_then_bb423.split
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",103
+		BSR _BEEP
+L136:	; if_break_bb425
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",0
 		MOV.L #00000001H, R4
 		MOV.L #40490FDBH, R3
 		MOV.L #4196CBE4H, R2
 		MOV.L #000000B4H, R1
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",92
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",105
 		BSR _turn
-L44:	; switch_clause_bb41.split3
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",93
+L137:	; if_break_bb425.split
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",106
 		MOV.L #00000001H, 04H[R0]
-L45:	; switch_break_bb45
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",97
+L138:	; switch_break_bb426
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",110
 		MOV.L #_mypos, R14
 		MOV.L 08H[R0], 04H[R14]
-L46:	; switch_break_bb45.split
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",100
+L139:	; switch_break_bb426.split
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",113
 		MOV.L #_mypos, R1
 		MOV.L 04H[R1], R1
 		CMP #03H, R1
-		BEQ L53
-L47:	; switch_break_bb45.split
+		BEQ L146
+L140:	; switch_break_bb426.split
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",0
 		CMP #01H, R1
-		BEQ L51
-L48:	; switch_break_bb45.split
+		BEQ L144
+L141:	; switch_break_bb426.split
 		CMP #02H, R1
-		BEQ L52
-L49:	; switch_break_bb45.split
+		BEQ L145
+L142:	; switch_break_bb426.split
 		CMP #00H, R1
-		BNE L54
-L50:	; switch_clause_bb48
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",103
+		BNE L147
+L143:	; switch_clause_bb429
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",116
 		MOV.L #_mypos, R1
 		MOV.W 02H[R1], R2
 		ADD #01H, R2
 		MOV.W R2, 02H[R1]
-		BRA L54
-L51:	; switch_clause_bb51
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",107
+		BRA L147
+L144:	; switch_clause_bb432
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",120
 		MOV.L #_mypos, R14
 		MOV.W [R14], R15
 		ADD #01H, R15
 		MOV.W R15, [R14]
-		BRA L54
-L52:	; switch_clause_bb54
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",111
+		BRA L147
+L145:	; switch_clause_bb435
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",124
 		MOV.L #_mypos, R1
 		MOV.W 02H[R1], R2
 		SUB #01H, R2
 		MOV.W R2, 02H[R1]
-		BRA L54
-L53:	; switch_clause_bb57
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",115
+		BRA L147
+L146:	; switch_clause_bb438
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",128
 		MOV.L #_mypos, R14
 		MOV.W [R14], R15
 		SUB #01H, R15
 		MOV.W R15, [R14]
-L54:	; bb61
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",69
+L147:	; bb442
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",70
 		MOV.L #_mypos, R14
 		MOV.W [R14], R14
 		CMP 10H[R0].L, R14
-		BNE L56
-L55:	; bb67
+		BNE L149
+L148:	; bb448
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",0
 		MOV.L #_mypos, R1
 		MOV.W 02H[R1], R1
 		CMP 0CH[R0].L, R1
-		BEQ L57
-L56:	; bb73
+		BEQ L150
+L149:	; bb454
 		MOV.L #00000001H, [R0]
-		BRA L58
-L57:	; bb74
+		BRA L151
+L150:	; bb455
 		MOV.L #00000000H, [R0]
-L58:	; bb75
+L151:	; bb456
 		MOV.L [R0], R1
 		CMP #00H, R1
 		BNE L31
-L59:	; bb79
-		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",120
+L152:	; bb461
+		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\fast.c",133
 		MOV.L 04H[R0], R1
 		MUL #5AH, R1
 		ITOF R1, R1
 		MOV.L #00000000H, R4
-		MOV.L #3E4CCCCDH, R3
+		MOV.L #3ECCCCCDH, R3
 		MOV.L #3F800000H, R2
 		BSR _straight
 		RTSD #14H

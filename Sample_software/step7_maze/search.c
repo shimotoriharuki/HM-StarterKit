@@ -384,7 +384,7 @@ void adj_position()
 	
 	MOT_POWER_ON;
 	run_mode = CONST_DISTANCE_MODE;
-	wait_ms(1000);
+	wait_ms(600);
 	
 	//run_mode = CONST_ANGLE_MODE;
 	//wait_ms(1000);

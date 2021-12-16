@@ -1,4 +1,4 @@
-;RX Family C/C++ Compiler (V3.03.00 [20 Nov 2020])  16-Dec-2021 23:18:58
+;RX Family C/C++ Compiler (V3.03.00 [20 Nov 2020])  16-Dec-2021 23:40:45
 
 ;*** CPU TYPE ***
 
@@ -18,7 +18,7 @@
 ;-optimize=0
 ;-nologo
 ;-MAKEUD=DefaultBuild
-;-exec_time=C:\Users\under\AppData\Local\Temp\CSPlusBuildTool_e8ed5d860eb94e1ba5dd8261ad1388e2sjmy41py.34x
+;-exec_time=C:\Users\under\AppData\Local\Temp\CSPlusBuildTool_aad1e9bee0414f7d8054410eceb0dc9dux33ghk4.jq4
 ;run.c
 
 		.glb	_con_wall
@@ -135,7 +135,7 @@ L23:	; bb30
 L24:	; bb33
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\run.c",52
 		MOV.L #_tar_speed, R14
-		MOV.L #3DCCCCCDH, R15
+		MOV.L #3E4CCCCDH, R15
 		FCMP [R14].L, R15
 		BLT L27
 L25:	; if_then_bb38
@@ -145,7 +145,7 @@ L25:	; if_then_bb38
 L26:	; if_then_bb38.split
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\run.c",54
 		MOV.L #_tar_speed, R14
-		MOV.L #3DCCCCCDH, [R14]
+		MOV.L #3E4CCCCDH, [R14]
 L27:	; bb39
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\run.c",50
 		MOV.L #_len_mouse, R14
