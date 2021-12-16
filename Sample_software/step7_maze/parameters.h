@@ -26,6 +26,9 @@
 #define TH_SEN_FR	170				//壁があるか否かの閾値	
 #define TH_SEN_FL	108				//壁があるか否かの閾値
 
+#define CONST_DISTANCE_L 3770
+#define CONST_DISTANCE_R 3796
+
 #define CONTH_SEN_R	TH_SEN_R			//制御をかけるか否かの閾値
 #define CONTH_SEN_L	TH_SEN_L			//制御をかけるか否かの閾値
 #define CON_WALL_KP	(5.0)				//壁センサによる姿勢制御の比例制御の比例定数

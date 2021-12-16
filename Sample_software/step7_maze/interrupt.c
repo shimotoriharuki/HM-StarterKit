@@ -166,9 +166,41 @@ void int_cmt0(void)
 		V_r += 1 * (p_ang_vel - ang_vel) *(OMEGA_KD/100.0); //(0.4-0.3)*0.1 -> 0.01 
 		V_l -= 1 * (p_ang_vel - ang_vel) *(OMEGA_KD/100.0);
 
-	}else if(run_mode == NON_CON_MODE){
-		//‰½‚à‚µ‚È‚¢
-		nop();
+	}else if(run_mode == CONST_DISTANCE_MODE){
+		float kp_distance = 0.01;
+		float ki_distance = 0.00001;
+		float kd_distance = 0;
+		
+		float p_distance_l = 0;
+		float p_distance_r = 0;
+		static float i_distance_l, i_distance_r;
+		
+		p_distance_r = 1 * (CONST_DISTANCE_R - sen_fr.value) * kp_distance;
+		p_distance_l = 1 * (CONST_DISTANCE_L - sen_fl.value) * kp_distance;
+		
+		//i_distance_r += 1 * (CONST_DISTANCE_R - sen_fr.value) * ki_distance;
+		//i_distance_l += 1 * (CONST_DISTANCE_L - sen_fl.value) * ki_distance;
+		
+		V_r = p_distance_r + i_distance_r;
+		V_l = p_distance_l + i_distance_l;
+		
+		//nop();
+	}else if(run_mode == CONST_ANGLE_MODE){
+		float kp_angle = 0.1;
+		float ki_angle = 0.00001;
+		float kd_angle = 0;
+		float p_angle_l = 0;
+		float p_angle_r = 0;
+		
+		p_angle_r = -1 * (sen_fl.value - sen_fr.value) * kp_angle;
+		p_angle_l = 1 * (sen_fl.value - sen_fr.value) * kp_angle;
+		
+		//i_distance_r += 1 * (CONST_DISTANCE_R - sen_fr.value) * ki_distance;
+		//i_distance_l += 1 * (CONST_DISTANCE_L - sen_fl.value) * ki_distance;
+		
+		V_r = p_angle_r;
+		V_l = p_angle_l;
+		
 	}else{
 		//‰½‚à‚µ‚È‚¢
 		nop();	

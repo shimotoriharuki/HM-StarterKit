@@ -48,6 +48,9 @@
 #define NON_CON_MODE	3			//非制御モード
 #define TEST_MODE	4			//テストモード(割り込み用モータ制御を切るモード)
 #define F_WALL_MODE	5
+#define CONST_DISTANCE_MODE 6
+#define CONST_ANGLE_MODE 7
+#define I_RESET_MODE 8
 
 #define MASK_SEARCH		0x01		//探索走行用マスク値.壁情報とこの値のAND値が０（NOWALL）なら壁なしor未探索区間
 #define MASK_SECOND		0x03		//最短走行用マスク値.壁情報とこの値のAND値が０（NOWALL）なら壁なし

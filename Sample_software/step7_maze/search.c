@@ -382,6 +382,14 @@ int get_nextdir(int x, int y, int mask, t_direction *dir)
 void adj_position()
 {
 	
+	MOT_POWER_ON;
+	run_mode = CONST_DISTANCE_MODE;
+	wait_ms(1000);
+	
+	//run_mode = CONST_ANGLE_MODE;
+	//wait_ms(1000);
+	
+
 }
 
 void search_adachi(int gx, int gy)
