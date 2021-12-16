@@ -379,6 +379,10 @@ int get_nextdir(int x, int y, int mask, t_direction *dir)
 }
 
 
+void adj_position()
+{
+	
+}
 
 void search_adachi(int gx, int gy)
 {
@@ -446,25 +450,40 @@ void search_adachi(int gx, int gy)
 
 		switch(get_nextdir(gx,gy,MASK_SEARCH,&glob_nextdir))		//次に行く方向を戻り値とする関数を呼ぶ
 		{
-			case front:
-
+			case front:			
 				straight(SECTION,SEARCH_ACCEL,SEARCH_SPEED,SEARCH_SPEED);		//半区画進む
+				if(mypos.dir == north && (wall[mypos.x][mypos.y].north & MASK_SEARCH) == WALL || mypos.dir == east && (wall[mypos.x][mypos.y].east & MASK_SEARCH) == WALL || mypos.dir == west && (wall[mypos.x][mypos.y].west & MASK_SEARCH) == WALL || mypos.dir == south && (wall[mypos.x][mypos.y].south & MASK_SEARCH) == WALL){ //前に壁があったら
+					adj_position();
+					BEEP();
+				}
 				break;
 			
 			case right:
 				straight(HALF_SECTION,SEARCH_ACCEL,SEARCH_SPEED,0);		//半区画進む
+				if(mypos.dir == north && (wall[mypos.x][mypos.y].north & MASK_SEARCH) == WALL || mypos.dir == east && (wall[mypos.x][mypos.y].east & MASK_SEARCH) == WALL || mypos.dir == west && (wall[mypos.x][mypos.y].west & MASK_SEARCH) == WALL || mypos.dir == south && (wall[mypos.x][mypos.y].south & MASK_SEARCH) == WALL){ //前に壁があったら
+					adj_position();
+					BEEP();
+				}
 				turn(90,TURN_ACCEL,TURN_SPEED,RIGHT);				//右に曲がって
 				straight(HALF_SECTION,SEARCH_ACCEL,SEARCH_SPEED,SEARCH_SPEED);
 				break;
 			
 			case left:
 				straight(HALF_SECTION,SEARCH_ACCEL,SEARCH_SPEED,0);		//半区画進む
+				if(mypos.dir == north && (wall[mypos.x][mypos.y].north & MASK_SEARCH) == WALL || mypos.dir == east && (wall[mypos.x][mypos.y].east & MASK_SEARCH) == WALL || mypos.dir == west && (wall[mypos.x][mypos.y].west & MASK_SEARCH) == WALL || mypos.dir == south && (wall[mypos.x][mypos.y].south & MASK_SEARCH) == WALL){ //前に壁があったら
+					adj_position();
+					BEEP();
+				}
 				turn(90,TURN_ACCEL,TURN_SPEED,LEFT);				//左に曲がって
 				straight(HALF_SECTION,SEARCH_ACCEL,SEARCH_SPEED,SEARCH_SPEED);
 				break;
 			
 			case rear:
 				straight(HALF_SECTION,SEARCH_ACCEL,SEARCH_SPEED,0);		//半区画進む
+				if(mypos.dir == north && (wall[mypos.x][mypos.y].north & MASK_SEARCH) == WALL || mypos.dir == east && (wall[mypos.x][mypos.y].east & MASK_SEARCH) == WALL || mypos.dir == west && (wall[mypos.x][mypos.y].west & MASK_SEARCH) == WALL || mypos.dir == south && (wall[mypos.x][mypos.y].south & MASK_SEARCH) == WALL){ //前に壁があったら
+					adj_position();
+					BEEP();
+				}
 				turn(180,TURN_ACCEL,TURN_SPEED,RIGHT);					//180ターン
 				straight(HALF_SECTION,SEARCH_ACCEL,SEARCH_SPEED,SEARCH_SPEED);
 				break;
