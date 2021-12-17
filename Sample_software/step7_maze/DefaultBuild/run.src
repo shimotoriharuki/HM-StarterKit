@@ -1,4 +1,4 @@
-;RX Family C/C++ Compiler (V3.03.00 [20 Nov 2020])  16-Dec-2021 23:40:45
+;RX Family C/C++ Compiler (V3.03.00 [20 Nov 2020])  17-Dec-2021 20:46:22
 
 ;*** CPU TYPE ***
 
@@ -18,7 +18,7 @@
 ;-optimize=0
 ;-nologo
 ;-MAKEUD=DefaultBuild
-;-exec_time=C:\Users\under\AppData\Local\Temp\CSPlusBuildTool_aad1e9bee0414f7d8054410eceb0dc9dux33ghk4.jq4
+;-exec_time=C:\Users\under\AppData\Local\Temp\CSPlusBuildTool_827916120850419ea2106604d5500905ym3dltx3.pri
 ;run.c
 
 		.glb	_con_wall
@@ -233,7 +233,7 @@ _turn:
 		MOV.L R2, 10H[R0]
 		MOV.L R3, 0CH[R0]
 		MOV.W R4, 0AH[R0]
-		MOV.L #000001F4H, R1
+		MOV.L #00000064H, R1
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\run.c",83
 		BSR _wait_ms
 L39:	; entry.split
@@ -511,7 +511,7 @@ L89:	; bb139.split19
 		MOV.L #00000000H, [R14]
 L90:	; bb139.split20
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\run.c",0
-		MOV.L #000001F4H, R1
+		MOV.L #00000064H, R1
 		.LINE  "C:\Users\under\!UnderBirdWorkspace\HM-StarterKit\Sample_software\step7_maze\run.c",158
 		BSR _wait_ms
 		RTSD #18H
